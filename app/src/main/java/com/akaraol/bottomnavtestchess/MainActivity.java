@@ -26,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        mAuth = FirebaseAuth.getInstance();
         //Fragment değiştirme kodalrı
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigationView);
         NavController navController = Navigation.findNavController(this, R.id.fragment);
@@ -36,8 +37,10 @@ public class MainActivity extends AppCompatActivity {
 
 
         NavigationUI.setupWithNavController(bottomNavigationView, navController);
+
     }
 
+    //Menuyu oluşturduk
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater menuInflater = getMenuInflater();
@@ -49,18 +52,17 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
 
-
-
         if (item.getItemId() == R.id.sig_out) {
+                //Sign-Out
 
-            mAuth.signOut();
 
             Intent intentToLogin = new Intent(MainActivity.this, LoginScreenActivity.class);
             startActivity(intentToLogin);
             finish();
 
-        }
 
+
+        }
 
         return super.onOptionsItemSelected(item);
     }
@@ -70,4 +72,15 @@ public class MainActivity extends AppCompatActivity {
 
     public void signUpClicked(View view) {
     }
+
+    public void exitClicked (View view) {
+
+        mAuth.signOut();
+
+        Intent intentToExit = new Intent(MainActivity.this, LoginScreenActivity.class);
+        startActivity(intentToExit);
+        finish();
+
+    }
 }
+

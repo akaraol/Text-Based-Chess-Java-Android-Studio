@@ -27,7 +27,7 @@ public class LoginScreenActivity extends AppCompatActivity {
         View view = binding.getRoot();
         setContentView(view);
 
-
+        //Çıkış Yapılmadığı Sürece Aynı Kullanıcıda Kalacak
         mAuth = FirebaseAuth.getInstance();
         FirebaseUser user = mAuth.getCurrentUser();
         if (user != null) {
@@ -40,7 +40,7 @@ public class LoginScreenActivity extends AppCompatActivity {
     }
 
 
-
+    //Sign-In butonuna tıklatınca firebaseden kullanıcı çekecek
     public void signInClicked (View view) {
         String email = binding.usernameInput.getText().toString();
         String password = binding.pass.getText().toString();
@@ -69,7 +69,7 @@ public class LoginScreenActivity extends AppCompatActivity {
         }
 
     }
-
+//Sign up butonuna tıklayınca firebaseden kayıt açacak
     public void signUpClicked (View view) {
 
         String email = binding.usernameInput.getText().toString();
@@ -81,7 +81,7 @@ public class LoginScreenActivity extends AppCompatActivity {
 
         }
         else {
-            mAuth.signInWithEmailAndPassword(email,password).addOnSuccessListener(new OnSuccessListener<AuthResult>() {
+            mAuth.createUserWithEmailAndPassword(email,password).addOnSuccessListener(new OnSuccessListener<AuthResult>() {
                 @Override
                 public void onSuccess(AuthResult authResult) {
 

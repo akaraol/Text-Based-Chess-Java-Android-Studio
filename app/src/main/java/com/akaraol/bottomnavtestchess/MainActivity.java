@@ -1,16 +1,25 @@
 package com.akaraol.bottomnavtestchess;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
+import android.view.View;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class MainActivity extends AppCompatActivity {
+
+    private FirebaseAuth mAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,5 +36,38 @@ public class MainActivity extends AppCompatActivity {
 
 
         NavigationUI.setupWithNavController(bottomNavigationView, navController);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater menuInflater = getMenuInflater();
+        menuInflater.inflate(R.menu.option_menu, menu);
+
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+
+
+
+        if (item.getItemId() == R.id.sig_out) {
+
+            mAuth.signOut();
+
+            Intent intentToLogin = new Intent(MainActivity.this, LoginScreenActivity.class);
+            startActivity(intentToLogin);
+            finish();
+
+        }
+
+
+        return super.onOptionsItemSelected(item);
+    }
+
+    public void signInClicked(View view) {
+    }
+
+    public void signUpClicked(View view) {
     }
 }

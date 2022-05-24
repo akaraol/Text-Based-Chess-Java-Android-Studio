@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "580963035708",
+    "project_id": "bottomnavtestchessver2",
+    "storage_bucket": "bottomnavtestchessver2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:580963035708:android:e103ee4d1f3901cf13b139",
+        "android_client_info": {
+          "package_name": "com.akaraol.bottomnavtestchess"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "580963035708-d8vt8il3annk4iibsf3p8rg2vrls6qpk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCO89hVFOegYZTNxrS3M6CY8T9hWbl8614"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "580963035708-d8vt8il3annk4iibsf3p8rg2vrls6qpk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

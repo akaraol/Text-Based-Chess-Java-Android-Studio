@@ -14,6 +14,9 @@
         android:theme="@style/Theme.BottomNavTestChess"
         tools:targetApi="31">
         <activity
+            android:name=".LoginScreenActivity"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>

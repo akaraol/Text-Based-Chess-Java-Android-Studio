@@ -10,6 +10,7 @@
     tools:context=".Activity.SecondFragment">
 
     <androidx.recyclerview.widget.RecyclerView
+
         android:id="@+id/rv_chess_log"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -29,17 +30,21 @@
         android:layout_weight="1">
 
         <LinearLayout
+
             android:id="@+id/move1Container"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
             <Button
+
                 android:id="@+id/aButton"
                 style="@style/Widget.AppCompat.Button.Small"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="A" />
+                android:backgroundTint="#3648EA"
+                android:text="A"
+                app:cornerRadius="20dp" />
 
             <Button
                 android:id="@+id/bButton"
@@ -230,6 +235,7 @@
             android:layout_marginTop="0dp"
             android:layout_marginEnd="1dp"
             android:layout_weight="1"
+            android:backgroundTint="#3648EA"
             android:minHeight="32dp"
             android:text="Git" />
 

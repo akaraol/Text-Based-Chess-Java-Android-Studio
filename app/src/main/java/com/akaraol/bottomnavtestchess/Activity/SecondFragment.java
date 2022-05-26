@@ -127,7 +127,7 @@ public class SecondFragment extends Fragment {
             public void onClick(View view) {
 
 
-                    moveText.setText('A');
+                    moveText.setText(moveText.getText().toString() + 'A');
 
             }
         });

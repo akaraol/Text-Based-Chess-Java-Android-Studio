@@ -1,4 +1,4 @@
-package com.akaraol.bottomnavtestchess;
+package com.akaraol.bottomnavtestchess.Activity;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;

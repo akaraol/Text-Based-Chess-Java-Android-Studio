@@ -1,4 +1,4 @@
-package com.akaraol.bottomnavtestchess;
+package com.akaraol.bottomnavtestchess.Activity;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -6,6 +6,8 @@ import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -14,12 +16,18 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 
+import com.akaraol.bottomnavtestchess.Adapter.ChessLogAdapter;
+import com.akaraol.bottomnavtestchess.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.FirebaseAuth;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
     private FirebaseAuth mAuth;
+    private RecyclerView rv_chess_log;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +35,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         mAuth = FirebaseAuth.getInstance();
+
+
         //Fragment değiştirme kodalrı
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigationView);
         NavController navController = Navigation.findNavController(this, R.id.fragment);
@@ -59,9 +69,6 @@ public class MainActivity extends AppCompatActivity {
             Intent intentToLogin = new Intent(MainActivity.this, LoginScreenActivity.class);
             startActivity(intentToLogin);
             finish();
-
-
-
         }
 
         return super.onOptionsItemSelected(item);
@@ -82,5 +89,10 @@ public class MainActivity extends AppCompatActivity {
         finish();
 
     }
+
+
+
+
+
 }
 

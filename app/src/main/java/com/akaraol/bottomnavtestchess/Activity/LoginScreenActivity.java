@@ -70,6 +70,7 @@ public class LoginScreenActivity extends AppCompatActivity {
 
     }
 //Sign up butonuna tıklayınca firebaseden kayıt açacak
+
     public void signUpClicked (View view) {
 
         String email = binding.usernameInput.getText().toString();
